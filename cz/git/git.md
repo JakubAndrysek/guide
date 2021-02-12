@@ -69,5 +69,10 @@ GitHub je webová služba podporující vývoj softwaru za pomoci verzovacího n
 6. `$ git pull` -> stáhne všechny změny ze serveru
 7. `$ git status` -> zobrazí seznam změn 
 
+# Zdroje
+- https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+- https://git-scm.com/
+- https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
 
 
