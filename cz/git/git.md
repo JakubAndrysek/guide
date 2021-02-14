@@ -7,71 +7,86 @@ Git je v informatice distribuovaný systém správy verzí - [Wikipedia](https:/
 # [Github](https://github.com)
 GitHub je webová služba podporující vývoj softwaru za pomoci verzovacího nástroje Git - [Wikipedia](https://cs.wikipedia.org/wiki/GitHub)
 
-## Vytvoření repozitáře (projektu) - Webové rozhraní
+## Kompletní průvodce Gitem a Githubem (CZ)
+**[Git-scm.com](https://git-scm.com/book/cs/v2)**
 
-1. [Nový repozitář](https://github.com/new)
-2. Repository name -> název repozitáře
-3. Public nebo private
-4. Doporučené
-   1. README file -> popis projektu (úvodní Description)
-   2. .gitignore -> neverzuje cachovací složky/soubory podle IDE (Visual Studio) nebo jazyka (C++)
-   3. license -> výběr licence (moje oblíbená MIT License)
+## Vytvoření repozitáře (projektu) z webu
+
+- Stránka na vytvoření [nového repozitáře](https://github.com/new)
+- Repository name -> název repozitáře
+- Výběr dostupnosti: public nebo private
+- Doporučené
+   - README file -> popis projektu (úvodní Description)
+   - .gitignore -> určuje které adresáře nebo soubory se neverzují
+   - license -> výběr licence (moje oblíbená MIT License) viz [opensource.org](https://opensource.org/licenses)
 
 ## Nastavení SSH klíče (Linux)
-1. [Oficiální návod](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
-2. Generování klíče
-   1. `$ ssh-keygen -t ed25519 -C "your_email@example.com"`
-   2. `> Enter a file in which to save the key (/home/you/.ssh/id_ed25519):` -> ENTER
-   3. `> Enter passphrase (empty for no passphrase):` -> ENTER
-   4. `> Enter same passphrase again:` -> ENTER
-   5. `$ eval "$(ssh-agent -s)"` -> `Agent pid 59566`
-   6. `$ ssh-add ~/.ssh/id_ed25519`
-3. Přídání klíče do Githubu
-   1. `$ sudo apt-get install xclip`
-   2. `$ $ xclip -selection clipboard < ~/.ssh/id_ed25519.pub` ->   veřejný klíč máme nakopírovaný ve schránce
-   3. [Přídání](https://github.com/settings/keys) klíče na Githubu
-   4. New SSH key
-   5. Název počítače
-   6. Key -> stačí zmáčknout `CTRL + V` pro vložení klíče ze schránky
-4. Otestování připojení
-   1. `$ ssh -T git@github.com`
-   2. `> The authenticity of host 'github.com (IP ADDRESS)' can't be established.`
+- [Oficiální návod](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+- Generování klíče
+   - `$ ssh-keygen -t ed25519 -C "your_email@example.com"`
+   - `> Enter a file in which to save the key (/home/you/.ssh/id_ed25519):` -> ENTER (výchozí lokace)
+   - `> Enter passphrase (empty for no passphrase):` -> ENTER (není třeba zadávat)
+   - `> Enter same passphrase again:` -> ENTER
+   - `$ eval "$(ssh-agent -s)"` -> `Agent pid 59566`
+   - `$ ssh-add ~/.ssh/id_ed25519`
+- Přidání klíče do Github účtu
+   - `$ sudo apt-get install xclip`
+   - `$ $ xclip -selection clipboard < ~/.ssh/id_ed25519.pub` ->   veřejný klíč máme nakopírovaný ve schránce
+   - [Přídání](https://github.com/settings/keys) klíče na Githubu
+   - New SSH key
+   - Název počítače
+   - Key -> stačí zmáčknout `CTRL + V` pro vložení klíče ze schránky
+- Otestování připojení
+   - `$ ssh -T git@github.com`
+   - `> The authenticity of host 'github.com (IP ADDRESS)' can't be established.`
     
         `> RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.`
 
         `> Are you sure you want to continue connecting (yes/no)?`
-   3. Potvrdíme `yes`
-   4. **Nastaveno**
+   - Potvrdíme `yes`
+   - **Nastaveno**
 
 # Nastavení Gitu
 
-1. [Hezký popis příkazů](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)
-2. `$ git config --global user.name "Sam Smith"` -> nastavení jména
-2. `$ git config --global user.email sam@example.com` -> nastavení emailu
+- [Hezký popis příkazů](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)
+- `$ git config --global user.name "Sam Smith"` -> nastavení jména
+- `$ git config --global user.email sam@example.com` -> nastavení emailu
 
 ## Naklonování repozitáře
 
-1. Stránka s repozitářem / projektem
-2. Tpačítko `Code`
-   1. HTTPS -> jakékoliv zařízení (vhodné pro Windows)
-   2. SSH -> stažení na zařízeních s nastaveným SSH klíčem
-3. Jedna z možností -> nakopírovat do schránky
-4. `$ cd /zde/se/stahne/` -> složka kam se repozitář naklonuje
-5. `$ git clone [obsah schránky]` příklad `git clone git@github.com:JakubAndrysek/guides.git`
-6. **Naklonováno**
+- Stránka s repozitářem / projektem
+- Tpačítko `Code`
+   - HTTPS -> jakékoliv zařízení (vhodné pro Windows)
+   - SSH -> stažení na zařízeních s nastaveným SSH klíčem
+- Jedna z možností -> nakopírovat do schránky
+- `$ cd /misto/na/disku/` -> složka kam se repozitář naklonuje
+- `$ git clone [obsah schránky]` příklad `git clone git@github.com:JakubAndrysek/guides.git`
+- **Naklonováno**
 
-# Základní práce s Gitem
-1. `$ git add <nazev souboru>` -> připraví vybraný soubor ka zaverzování
-2. `$ git add *` -> připraví všechny soubory, ve kterých byla provedena změna, k zaverzování
-3. `$ git commit` -> otevře okno pro napsání popisu změn (po uložení a zavření zaverzuje)
-4. `$ git commit -m "Popis zmen"` -> Popis se dá přidat přímo v příkazu
-5. `$ git push` -> odešle všechny změny na server
-6. `$ git pull` -> stáhne všechny změny ze serveru
-7. `$ git status` -> zobrazí seznam změn 
+# Práce s Gitem
+
+## Základní příkazy
+- `$ git add <nazev souboru>` -> připraví vybraný soubor k zaverzování
+- `$ git add *` -> připraví všechny soubory, ve kterých byla provedena změna, k zaverzování
+- `$ git commit` -> otevře okno pro napsání popisu změn (po uložení a zavření zaverzuje)
+- `$ git commit -m "Popis zmen"` -> popis se dá přidat přímo v příkazu
+- `$ git push` -> odešle všechny změny na server
+- `$ git pull` -> stáhne všechny změny ze serveru
+- `$ git status` -> zobrazí seznam změn
+
+## Příklad použití
+- `$ git clone git@github.com:JakubAndrysek/guide.git` -> naklonuje repozitář **JakubAndrysek / guide**
+- Úprava repozitáře, přidání souborů
+- `$ git add *` -> připraví všechny změny k zaverzování
+- `$ git status` -> volitelné - zobrazí seznam změn v projektu
+- `$ git commit -m "Nova kapitola o Gitu"` -> Zaverzování souborů s popisem
+- `$ git push` -> odešle všechny provedené změny na server
+
+
 
 # Zdroje
-- https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 - https://git-scm.com/
+- https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 - https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
 
 
