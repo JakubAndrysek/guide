@@ -78,7 +78,7 @@ GitHub je webová služba podporující vývoj softwaru za pomoci verzovacího n
 - `$ git clone git@github.com:JakubAndrysek/guide.git` -> naklonuje repozitář **JakubAndrysek / guide**
 - Úprava repozitáře, přidání souborů
 - `$ git add *` -> připraví všechny změny k zaverzování
-- `$ git status` -> volitelné - zobrazí seznam změn v projektu
+- `$ git status` -> zobrazí seznam změn v projektu
 - `$ git commit -m "Nova kapitola o Gitu"` -> Zaverzování souborů s popisem
 - `$ git push` -> odešle všechny provedené změny na server
 
