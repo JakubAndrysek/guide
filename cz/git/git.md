@@ -55,7 +55,7 @@ GitHub je webová služba podporující vývoj softwaru za pomoci verzovacího n
 ## Naklonování repozitáře
 
 - Stránka s repozitářem / projektem
-- Tpačítko `Code`
+- Tlačítko `Code`
    - HTTPS -> jakékoliv zařízení (vhodné pro Windows)
    - SSH -> stažení na zařízeních s nastaveným SSH klíčem
 - Jedna z možností -> nakopírovat do schránky
