@@ -1,13 +1,13 @@
-// Vypis do seriove linky
+// Pokrocilejsi vypis do seriove linky
 
-//nastaveni periferii
+// nastaveni periferii
 void setup() {
   // nastaveni komunikacni rychlosti na 9600 bitu za sekundu
   Serial.begin(9600);
 }
 
 
-//nekonecna smycka
+// nekonecna smycka
 void loop() 
 {
   Serial.println("Vypis s odradkovanim");

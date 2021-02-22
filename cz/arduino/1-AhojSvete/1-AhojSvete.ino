@@ -7,9 +7,9 @@ void setup() {
 }
 
 
-//nekonecna smycka
+// nekonecna smycka
 void loop() 
 {
-  Serial.println("Ahoj svete"); //vypis "Ahoj svete"
-  delay(1000);                  //cekej 1 vterinu
+  Serial.println("Ahoj svete"); // vypis "Ahoj svete"
+  delay(1000);                  // cekej 1 vterinu
 }
