@@ -20,4 +20,3 @@
   - `delay(Milisekynd)`
   - `digitalWrite(CisloPinu, HIGH)`
   - `analogWrite(CisloPinu, PWM)` PWM -> [0-255]
-  - ``
